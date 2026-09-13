@@ -6,7 +6,7 @@
     <title>Blossom Stay | Alojamientos en Puerto Iguazú</title>
     <meta
       name="description"
-      content="Encuentra los mejores alojamientos en Puerto Iguazú con Blossom Stay. Disfruta de una experiencia cálida, natural y relajante."
+      content="Encuentra alojamientos, habitaciones y experiencias únicas en Puerto Iguazú con Blossom Stay."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,17 +19,23 @@
   <body>
     <header class="topbar">
       <div class="container nav">
-        <div class="brand">
+        <div class="brand" aria-label="Blossom Stay logo">
           <span class="brand-mark">B</span>
           <span>Blossom Stay</span>
         </div>
-        <nav class="menu">
+
+        <nav class="menu" aria-label="Navegación principal">
           <a href="#inicio">Inicio</a>
           <a href="#destinos">Destinos</a>
+          <a href="#lugares">Lugares</a>
           <a href="#experiencias">Experiencias</a>
           <a href="#contacto">Contacto</a>
         </nav>
-        <button class="button button-primary">Reservar ahora</button>
+
+        <div class="nav-actions">
+          <button class="button button-secondary modal-trigger" data-modal="loginModal">Iniciar sesión</button>
+          <button class="button button-primary modal-trigger" data-modal="signupModal">Registrarse</button>
+        </div>
       </div>
     </header>
 
@@ -40,8 +46,8 @@
             <p class="eyebrow">Descubre Puerto Iguazú</p>
             <h1>Tu refugio perfecto, rodeado de naturaleza.</h1>
             <p class="lead">
-              Encontrá los mejores alojamientos para vivir una experiencia inolvidable
-              cerca de Cataratas del Iguazú, selva y aventura.
+              Encontrá los mejores alojamientos, habitaciones con estilo y experiencias únicas
+              cerca de las Cataratas y la selva misionera.
             </p>
 
             <div class="hero-actions">
@@ -79,14 +85,19 @@
 
       <section class="featured" id="destinos">
         <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">Alojamientos destacados</p>
-            <h2>Elegí el lugar ideal para tu escapada</h2>
+          <div class="section-heading inline-heading">
+            <div>
+              <p class="eyebrow">Alojamientos destacados</p>
+              <h2>Elegí el lugar ideal para tu escapada</h2>
+            </div>
+            <a href="#lugares" class="text-link">Ver todos</a>
           </div>
 
           <div class="cards" id="stay-cards">
             <article class="card" data-category="selva">
-              <div class="card-image image-1"></div>
+              <div class="card-image image-1">
+                <button class="favorite-btn" aria-label="Guardar alojamiento">♡</button>
+              </div>
               <div class="card-content">
                 <div class="card-topline">
                   <span class="tag">Selva</span>
@@ -94,6 +105,9 @@
                 </div>
                 <h3>Casa Jardín Iguazú</h3>
                 <p>Ideal para desconectarte con piscina, jardín y vista natural.</p>
+                <div class="stars" aria-label="Valoración 4.9 de 5">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
                 <div class="card-meta">
                   <span>2 habitaciones</span>
                   <strong>USD 120 / noche</strong>
@@ -102,7 +116,9 @@
             </article>
 
             <article class="card" data-category="familia">
-              <div class="card-image image-2"></div>
+              <div class="card-image image-2">
+                <button class="favorite-btn" aria-label="Guardar alojamiento">♡</button>
+              </div>
               <div class="card-content">
                 <div class="card-topline">
                   <span class="tag">Familia</span>
@@ -110,6 +126,9 @@
                 </div>
                 <h3>Blossom House</h3>
                 <p>Amplio espacio con ambiente cálido, ideal para viajar en familia.</p>
+                <div class="stars" aria-label="Valoración 4.8 de 5">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
                 <div class="card-meta">
                   <span>3 huéspedes</span>
                   <strong>USD 98 / noche</strong>
@@ -118,7 +137,9 @@
             </article>
 
             <article class="card" data-category="romantico">
-              <div class="card-image image-3"></div>
+              <div class="card-image image-3">
+                <button class="favorite-btn" aria-label="Guardar alojamiento">♡</button>
+              </div>
               <div class="card-content">
                 <div class="card-topline">
                   <span class="tag">Romántico</span>
@@ -126,12 +147,219 @@
                 </div>
                 <h3>Cabina del Bosque</h3>
                 <p>Ambiente íntimo y tranquilo para vivir una escapada especial.</p>
+                <div class="stars" aria-label="Valoración 5 de 5">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
                 <div class="card-meta">
                   <span>2 huéspedes</span>
                   <strong>USD 140 / noche</strong>
                 </div>
               </div>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="catalog" id="lugares">
+        <div class="container">
+          <div class="section-heading center-heading">
+            <p class="eyebrow">Todos los lugares</p>
+            <h2>Explorá habitaciones y alojamientos</h2>
+          </div>
+
+          <div class="filter-bar" aria-label="Filtros de alojamiento">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="casa">Casas</button>
+            <button class="filter-btn" data-filter="apartamento">Departamentos</button>
+            <button class="filter-btn" data-filter="cabana">Cabañas</button>
+            <button class="filter-btn" data-filter="familia">Familia</button>
+          </div>
+
+          <div class="catalog-grid">
+            <article class="place-card" data-type="casa">
+              <div class="place-photo place-1"></div>
+              <div class="place-body">
+                <div class="place-topline">
+                  <h3>Villa del Sol</h3>
+                  <span class="place-price">USD 110</span>
+                </div>
+                <div class="place-meta">
+                  <span>2 habitaciones</span>
+                  <span>Wifi + desayuno</span>
+                </div>
+                <div class="stars small-stars" aria-label="4 estrellas">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+                </div>
+                <button class="button button-primary full-width">Reservar</button>
+              </div>
+            </article>
+
+            <article class="place-card" data-type="apartamento">
+              <div class="place-photo place-2"></div>
+              <div class="place-body">
+                <div class="place-topline">
+                  <h3>Apart Belén</h3>
+                  <span class="place-price">USD 95</span>
+                </div>
+                <div class="place-meta">
+                  <span>1 habitación</span>
+                  <span>Centro</span>
+                </div>
+                <div class="stars small-stars" aria-label="5 estrellas">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <button class="button button-primary full-width">Reservar</button>
+              </div>
+            </article>
+
+            <article class="place-card" data-type="cabana">
+              <div class="place-photo place-3"></div>
+              <div class="place-body">
+                <div class="place-topline">
+                  <h3>Cabaña del Bosque</h3>
+                  <span class="place-price">USD 135</span>
+                </div>
+                <div class="place-meta">
+                  <span>2 habitaciones</span>
+                  <span>Parrilla</span>
+                </div>
+                <div class="stars small-stars" aria-label="4 estrellas">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+                </div>
+                <button class="button button-primary full-width">Reservar</button>
+              </div>
+            </article>
+
+            <article class="place-card" data-type="familia">
+              <div class="place-photo place-4"></div>
+              <div class="place-body">
+                <div class="place-topline">
+                  <h3>Hogar Nativo</h3>
+                  <span class="place-price">USD 150</span>
+                </div>
+                <div class="place-meta">
+                  <span>3 huéspedes</span>
+                  <span>Jardín + patio</span>
+                </div>
+                <div class="stars small-stars" aria-label="5 estrellas">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <button class="button button-primary full-width">Reservar</button>
+              </div>
+            </article>
+
+            <article class="place-card" data-type="casa">
+              <div class="place-photo place-5"></div>
+              <div class="place-body">
+                <div class="place-topline">
+                  <h3>Casa Florencia</h3>
+                  <span class="place-price">USD 118</span>
+                </div>
+                <div class="place-meta">
+                  <span>3 habitaciones</span>
+                  <span>Terraza</span>
+                </div>
+                <div class="stars small-stars" aria-label="4.5 estrellas">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+                </div>
+                <button class="button button-primary full-width">Reservar</button>
+              </div>
+            </article>
+
+            <article class="place-card" data-type="apartamento">
+              <div class="place-photo place-6"></div>
+              <div class="place-body">
+                <div class="place-topline">
+                  <h3>Loft del Parque</h3>
+                  <span class="place-price">USD 100</span>
+                </div>
+                <div class="place-meta">
+                  <span>1 habitación</span>
+                  <span>Vista al parque</span>
+                </div>
+                <div class="stars small-stars" aria-label="4 estrellas">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+                </div>
+                <button class="button button-primary full-width">Reservar</button>
+              </div>
+            </article>
+
+            <article class="place-card" data-type="cabana">
+              <div class="place-photo place-7"></div>
+              <div class="place-body">
+                <div class="place-topline">
+                  <h3>Rincón Verde</h3>
+                  <span class="place-price">USD 128</span>
+                </div>
+                <div class="place-meta">
+                  <span>2 habitaciones</span>
+                  <span>Asador</span>
+                </div>
+                <div class="stars small-stars" aria-label="5 estrellas">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <button class="button button-primary full-width">Reservar</button>
+              </div>
+            </article>
+
+            <article class="place-card" data-type="familia">
+              <div class="place-photo place-8"></div>
+              <div class="place-body">
+                <div class="place-topline">
+                  <h3>Casa de la Selva</h3>
+                  <span class="place-price">USD 165</span>
+                </div>
+                <div class="place-meta">
+                  <span>4 huéspedes</span>
+                  <span>Jardín + desayuno</span>
+                </div>
+                <div class="stars small-stars" aria-label="5 estrellas">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <button class="button button-primary full-width">Reservar</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="showcase">
+        <div class="container showcase-grid">
+          <div class="gallery-panel">
+            <div class="gallery-main photo-main"></div>
+            <div class="gallery-thumbs">
+              <div class="thumb photo-thumb-1"></div>
+              <div class="thumb photo-thumb-2"></div>
+              <div class="thumb photo-thumb-3"></div>
+            </div>
+          </div>
+
+          <div class="detail-panel">
+            <p class="eyebrow">Detalle del alojamiento</p>
+            <h2>Casa Jardín Iguazú</h2>
+            <div class="detail-rating">
+              <span class="stars">★ ★ ★ ★ ★</span>
+              <strong>4.9 · 126 reseñas</strong>
+            </div>
+            <p class="detail-copy">
+              Una vivienda acogedora con jardines tropicales, piscina privada y una vista natural que
+              invita a descansar luego de explorar la región.
+            </p>
+
+            <ul class="detail-list">
+              <li>2 habitaciones privadas</li>
+              <li>1 baño completo y amenities</li>
+              <li>Wi‑Fi, cocina equipada y patio</li>
+              <li>Check-in flexible y atención 24/7</li>
+            </ul>
+
+            <div class="price-row">
+              <div>
+                <span>Desde</span>
+                <strong>USD 120 / noche</strong>
+              </div>
+              <button class="button button-primary">Reservar ahora</button>
+            </div>
           </div>
         </div>
       </section>
@@ -148,7 +376,7 @@
             </p>
             <ul>
               <li>Ubicación estratégica cerca de los principales atractivos</li>
-              <li>Ambientes acogedores y modernos</li>
+              <li>Ambientes acogedores, modernos y muy bien valorados</li>
               <li>Recomendaciones personalizadas para cada viaje</li>
             </ul>
           </div>
@@ -160,8 +388,43 @@
             </div>
             <div class="mini-card alt">
               <span>Recomendación</span>
-              <strong>Estadía con desayuno incluido</strong>
+              <strong>Estadía con desayuno incluido + guía local</strong>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="reviews">
+        <div class="container">
+          <div class="section-heading center-heading">
+            <p class="eyebrow">Opiniones destacadas</p>
+            <h2>Viajero feliz, experiencia confirmada</h2>
+          </div>
+
+          <div class="review-grid">
+            <article class="review-card">
+              <div class="stars" aria-label="5 estrellas">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <p>“La casa estaba hermosa, tranquila y muy bien ubicada para visitar todo Puerto Iguazú.”</p>
+              <strong>— Lucia M.</strong>
+            </article>
+
+            <article class="review-card">
+              <div class="stars" aria-label="5 estrellas">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <p>“La atención fue excelente y el ambiente era perfecto para viajar con mi familia.”</p>
+              <strong>— Martín P.</strong>
+            </article>
+
+            <article class="review-card">
+              <div class="stars" aria-label="5 estrellas">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <p>“La cabaña tenía detalles muy lindos y estaba rodeada de naturaleza.”</p>
+              <strong>— Sofia R.</strong>
+            </article>
           </div>
         </div>
       </section>
@@ -178,11 +441,52 @@
         </div>
         <div class="footer-links">
           <a href="#inicio">Inicio</a>
-          <a href="#destinos">Destinos</a>
+          <a href="#lugares">Lugares</a>
           <a href="#experiencias">Experiencias</a>
+          <a href="#contacto">Contacto</a>
         </div>
       </div>
     </footer>
+
+    <div class="modal-overlay hidden" id="loginModal" aria-hidden="true">
+      <div class="modal">
+        <button class="close-modal" aria-label="Cerrar modal">×</button>
+        <h3>Iniciar sesión</h3>
+        <form class="modal-form">
+          <label>
+            <span>Email</span>
+            <input type="email" placeholder="usuario@email.com" />
+          </label>
+          <label>
+            <span>Contraseña</span>
+            <input type="password" placeholder="••••••••" />
+          </label>
+          <button type="submit" class="button button-primary full-width">Entrar</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal-overlay hidden" id="signupModal" aria-hidden="true">
+      <div class="modal">
+        <button class="close-modal" aria-label="Cerrar modal">×</button>
+        <h3>Crear cuenta</h3>
+        <form class="modal-form">
+          <label>
+            <span>Nombre</span>
+            <input type="text" placeholder="Tu nombre" />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" placeholder="usuario@email.com" />
+          </label>
+          <label>
+            <span>Contraseña</span>
+            <input type="password" placeholder="Crea una contraseña" />
+          </label>
+          <button type="submit" class="button button-primary full-width">Registrarme</button>
+        </form>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
