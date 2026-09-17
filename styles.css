@@ -2191,6 +2191,12 @@ button {
   font-size: 1.6rem;
 }
 
+.admin-hint {
+  margin: -8px 0 18px;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
 .modal-form {
   display: grid;
   gap: 16px;

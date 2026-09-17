@@ -38,6 +38,7 @@ const prevMonthBtn = document.getElementById('prevMonth');
 const nextMonthBtn = document.getElementById('nextMonth');
 
 const ADMIN_USERS = [
+  { user: 'admin', password: 'blossom123' },
   { user: 'Mia Benitez', password: 'blossom123' },
   { user: 'Nicol Nestto', password: 'blossom123' },
   { user: 'Acsa Goncalves', password: 'blossom123' },
@@ -500,9 +501,9 @@ signupForm?.addEventListener('submit', (event) => {
 adminLoginForm?.addEventListener('submit', (event) => {
   event.preventDefault();
   const formData = new FormData(adminLoginForm);
-  const user = String(formData.get('adminUser') || '');
+  const user = String(formData.get('adminUser') || '').trim().toLowerCase();
   const password = String(formData.get('adminPassword') || '');
-  const isValid = ADMIN_USERS.some((entry) => entry.user === user && entry.password === password);
+  const isValid = ADMIN_USERS.some((entry) => entry.user.toLowerCase() === user && entry.password === password);
 
   if (isValid) {
     showAdminPanel();
