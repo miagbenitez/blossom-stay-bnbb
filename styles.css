@@ -181,6 +181,28 @@ button {
   transform: translateY(2px);
 }
 
+body.section-mode main > section:not(.active-section),
+body.section-mode > .admin-panel,
+body.section-mode > .footer {
+  display: none;
+}
+
+body.section-mode main > section.active-section {
+  display: block;
+  animation: section-enter 0.28s ease both;
+}
+
+@keyframes section-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .nav-actions {
   display: flex;
   align-items: center;

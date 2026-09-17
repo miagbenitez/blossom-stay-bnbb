@@ -36,6 +36,8 @@ const bookingNights = document.getElementById('bookingNights');
 const bookingSavings = document.getElementById('bookingSavings');
 const prevMonthBtn = document.getElementById('prevMonth');
 const nextMonthBtn = document.getElementById('nextMonth');
+const menuLinks = document.querySelectorAll('.menu a');
+const mainSections = document.querySelectorAll('main > section');
 
 const ADMIN_USERS = [
   { user: 'admin', password: 'blossom123' },
@@ -55,6 +57,38 @@ let selectedDates = [];
 let compareItems = [];
 const nightlyRate = 96;
 const multiNightDiscount = 0.1;
+
+function showMenuSection(targetId) {
+  const targetSection = document.getElementById(targetId) || document.getElementById('inicio');
+  if (!targetSection) return;
+
+  mainSections.forEach((section) => {
+    section.classList.toggle('active-section', section === targetSection);
+  });
+
+  menuLinks.forEach((link) => {
+    const isActive = link.getAttribute('href') === `#${targetSection.id}`;
+    link.classList.toggle('active', isActive);
+    if (isActive) {
+      link.setAttribute('aria-current', 'page');
+    } else {
+      link.removeAttribute('aria-current');
+    }
+  });
+
+  document.body.classList.add('section-mode');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+menuLinks.forEach((link) => {
+  link.addEventListener('click', (event) => {
+    const targetId = link.getAttribute('href')?.slice(1);
+    if (!targetId) return;
+
+    event.preventDefault();
+    showMenuSection(targetId);
+  });
+});
 
 function updateComparePanel() {
   if (!compareList || !compareCount) return;
@@ -578,3 +612,4 @@ renderCalendar();
 updateBookingText();
 updateCatalogVisibility();
 updateComparePanel();
+showMenuSection('inicio');
