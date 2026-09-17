@@ -29,6 +29,11 @@ const logoutAdminButton = document.getElementById('logoutAdmin');
 const calendarGrid = document.getElementById('calendarGrid');
 const monthLabel = document.getElementById('monthLabel');
 const bookingRange = document.getElementById('bookingRange');
+const bookingPriceLabel = document.getElementById('bookingPriceLabel');
+const bookingTotal = document.getElementById('bookingTotal');
+const bookingDiscount = document.getElementById('bookingDiscount');
+const bookingNights = document.getElementById('bookingNights');
+const bookingSavings = document.getElementById('bookingSavings');
 const prevMonthBtn = document.getElementById('prevMonth');
 const nextMonthBtn = document.getElementById('nextMonth');
 
@@ -47,6 +52,8 @@ let currentMonth = new Date().getMonth();
 let currentYear = new Date().getFullYear();
 let selectedDates = [];
 let compareItems = [];
+const nightlyRate = 120;
+const multiNightDiscount = 0.1;
 
 function updateComparePanel() {
   if (!compareList || !compareCount) return;
@@ -174,6 +181,8 @@ function formatDate(date) {
 function updateBookingText() {
   if (!bookingRange) return;
 
+  updateBookingPrice();
+
   if (selectedDates.length === 0) {
     bookingRange.textContent = 'Seleccioná fechas';
     return;
@@ -186,6 +195,45 @@ function updateBookingText() {
 
   const [start, end] = selectedDates.slice().sort((a, b) => a - b);
   bookingRange.textContent = `${formatDate(start)} - ${formatDate(end)}`;
+}
+
+function updateBookingPrice() {
+  if (!bookingTotal || !bookingPriceLabel) return;
+
+  const hasRange = selectedDates.length === 2;
+  const [start, end] = selectedDates.slice().sort((a, b) => a - b);
+  const nights = hasRange ? Math.round((end - start) / 86400000) : 0;
+  const hasDiscount = nights >= 3;
+  const subtotal = nights * nightlyRate;
+  const savings = hasDiscount ? subtotal * multiNightDiscount : 0;
+  const total = subtotal - savings;
+
+  if (!hasRange || nights === 0) {
+    bookingPriceLabel.textContent = 'Desde';
+    bookingTotal.textContent = `USD ${nightlyRate} / noche`;
+    bookingDiscount?.setAttribute('hidden', '');
+    if (bookingNights) bookingNights.textContent = 'Seleccioná las fechas';
+    bookingSavings?.setAttribute('hidden', '');
+    return;
+  }
+
+  bookingPriceLabel.textContent = `Total por ${nights} ${nights === 1 ? 'noche' : 'noches'}`;
+  bookingTotal.textContent = `USD ${total.toFixed(0)}`;
+  if (bookingNights) bookingNights.textContent = `${nights} ${nights === 1 ? 'noche' : 'noches'}`;
+
+  if (hasDiscount) {
+    if (bookingDiscount) {
+      bookingDiscount.textContent = '10% de descuento aplicado';
+      bookingDiscount.removeAttribute('hidden');
+    }
+    if (bookingSavings) {
+      bookingSavings.textContent = `Ahorrás USD ${savings.toFixed(0)}`;
+      bookingSavings.removeAttribute('hidden');
+    }
+  } else {
+    bookingDiscount?.setAttribute('hidden', '');
+    bookingSavings?.setAttribute('hidden', '');
+  }
 }
 
 function renderCalendar() {
