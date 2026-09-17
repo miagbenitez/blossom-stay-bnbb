@@ -52,7 +52,7 @@ let currentMonth = new Date().getMonth();
 let currentYear = new Date().getFullYear();
 let selectedDates = [];
 let compareItems = [];
-const nightlyRate = 120;
+const nightlyRate = 96;
 const multiNightDiscount = 0.1;
 
 function updateComparePanel() {
@@ -109,9 +109,9 @@ function updateCatalogVisibility() {
     const cardType = card.dataset.type || '';
     const services = (card.dataset.services || '').split(',');
     const matchesPrice = priceValue === 'all' ||
-      (priceValue === 'under-100' && price < 100) ||
-      (priceValue === '100-150' && price >= 100 && price <= 150) ||
-      (priceValue === 'over-150' && price > 150);
+      (priceValue === 'under-80' && price < 80) ||
+      (priceValue === '80-120' && price >= 80 && price <= 120) ||
+      (priceValue === 'over-120' && price > 120);
     const matchesType = typeValue === 'all' || cardType === typeValue;
     const matchesGuests = guestValue === 'all' ||
       (guestValue === '2' && guests <= 2) ||
