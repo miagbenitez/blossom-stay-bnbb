@@ -154,6 +154,33 @@ button {
   font-weight: 600;
 }
 
+.menu a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0.42rem 0.55rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.menu a::after {
+  content: "\25BE";
+  color: var(--primary);
+  font-size: 0.68rem;
+  transition: transform 0.2s ease;
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+  background: rgba(255, 94, 179, 0.1);
+  color: var(--primary-dark);
+}
+
+.menu a:hover::after,
+.menu a:focus-visible::after {
+  transform: translateY(2px);
+}
+
 .nav-actions {
   display: flex;
   align-items: center;
