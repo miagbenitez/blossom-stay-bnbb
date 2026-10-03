@@ -24,21 +24,27 @@
         </div>
 
         <nav class="menu" aria-label="Navegación principal">
-          <a href="#inicio">Inicio</a>
-          <a href="#destinos">Destinos</a>
-          <a href="#secciones">Secciones</a>
-          <a href="#lugares">Lugares</a>
-          <a href="#experiencias">Experiencias</a>
-          <a href="#itinerarios">Itinerarios</a>
-          <a href="#paquetes-premium">Premium</a>
-          <a href="#contacto-fijo">Contacto</a>
+          <a href="#inicio" data-i18n="navHome">Inicio</a>
+          <a href="#destinos" data-i18n="navDestinations">Destinos</a>
+          <a href="#secciones" data-i18n="navSections">Secciones</a>
+          <a href="#lugares" data-i18n="navPlaces">Lugares</a>
+          <a href="#experiencias" data-i18n="navExperiences">Experiencias</a>
+          <a href="#contacto-fijo" data-i18n="navContact">Contacto</a>
         </nav>
 
         <div class="nav-actions">
-          <a class="phone-pill" href="tel:+543757123456">☎ +54 3757 123-456</a>
-          <button class="button button-secondary modal-trigger" data-modal="loginModal">Iniciar sesión</button>
-          <button class="button button-primary modal-trigger" data-modal="signupModal">Registrarse</button>
-          <button class="button button-secondary admin-trigger" data-modal="adminModal" type="button">Admin</button>
+          <button class="button button-secondary modal-trigger" data-modal="loginModal" data-i18n="loginBtn">Iniciar sesión</button>
+          <button class="button button-primary modal-trigger" data-modal="signupModal" data-i18n="signupBtn">Registrarse</button>
+          <button class="button button-secondary admin-trigger" data-modal="adminModal" type="button" data-i18n="adminBtn">Admin</button>
+          <label class="lang-switch" aria-label="Select language">
+            <span class="lang-label">ES</span>
+            <select id="languageSelect" aria-label="Idioma">
+              <option value="es">ES</option>
+              <option value="en">EN</option>
+              <option value="pt">PT</option>
+              <option value="fr">FR</option>
+            </select>
+          </label>
         </div>
       </div>
     </header>
@@ -47,49 +53,118 @@
       <section class="hero" id="inicio">
         <div class="container hero-content">
           <div class="hero-copy">
-            <p class="eyebrow">Descubre Puerto Iguazú</p>
-            <h1>Tu refugio perfecto, rodeado de naturaleza.</h1>
-            <p class="lead">
+            <p class="eyebrow" data-i18n="heroEyebrow">Descubre Puerto Iguazú</p>
+            <h1 data-i18n="heroTitle">Tu refugio perfecto, rodeado de naturaleza.</h1>
+            <p class="lead" data-i18n="heroDesc">
               Encontrá los mejores alojamientos, habitaciones con estilo y experiencias únicas
               cerca de las Cataratas y la selva misionera.
             </p>
 
             <div class="hero-actions">
-              <button class="button button-primary">Explorar alojamientos</button>
-              <button class="button button-secondary">Ver experiencias</button>
-              <a class="button button-ghost" href="tel:+543757123456">Llamar ahora</a>
+              <button class="button button-primary" data-i18n="heroExplore">Explorar alojamientos</button>
+              <button class="button button-secondary" data-i18n="heroExperiencesBtn">Ver experiencias</button>
+              <a class="button button-ghost" href="tel:+543757123456" data-i18n="heroCall">Llamar ahora</a>
             </div>
 
             <div class="social-cta" aria-label="Redes sociales">
               <a href="https://www.instagram.com/blossom.staybnb/" target="_blank" rel="noreferrer">Instagram</a>
               <a href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a>
               <a href="https://wa.me/543757123456" target="_blank" rel="noreferrer">WhatsApp</a>
+              <a class="phone-pill" href="tel:+543757123456">☎ +54 3757 123-456</a>
             </div>
 
             <ul class="stats">
-              <li><strong>180+</strong><span>Estadías</span></li>
-              <li><strong>4.8/5</strong><span>Reseñas</span></li>
-              <li><strong>24/7</strong><span>Atención</span></li>
+              <li><strong>180+</strong><span data-i18n="statsStays">Estadías</span></li>
+              <li><strong>4.8/5</strong><span data-i18n="statsReviews">Reseñas</span></li>
+              <li><strong>24/7</strong><span data-i18n="statsSupport">Atención</span></li>
             </ul>
           </div>
 
           <div class="search-card">
-            <h2>Buscar alojamiento</h2>
+            <h2 data-i18n="searchTitle">Buscar alojamiento</h2>
             <form class="search-form" id="searchForm">
-              <label>
-                <span>Destino</span>
-                <input type="text" value="Puerto Iguazú" />
+              <label class="destination-map-field">
+                <span data-i18n="searchDestination">Destino</span>
+                <div class="destination-map-preview" aria-label="Mapa del destino">
+                  <span class="mini-map-label">Puerto Iguazú</span>
+                  <span class="mini-map-pin pin-a">Selva</span>
+                  <span class="mini-map-pin pin-b">Río</span>
+                  <span class="mini-map-pin pin-c">Centro</span>
+                </div>
               </label>
               <label>
-                <span>Fechas</span>
+                <span data-i18n="searchDates">Fechas</span>
                 <input type="text" value="20 - 27 oct" />
               </label>
               <label>
-                <span>Huéspedes</span>
+                <span data-i18n="searchGuests">Huéspedes</span>
                 <input type="text" value="2 adultos" />
               </label>
-              <button type="submit" class="button button-primary full-width search-trigger">Buscar</button>
+              <button type="submit" class="button button-primary full-width search-trigger" data-i18n="searchButton">Buscar</button>
             </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="booking-panel">
+        <div class="container booking-layout">
+          <div class="booking-copy">
+            <p class="eyebrow" data-i18n="bookingEyebrow">Reserva fácil</p>
+            <h2 data-i18n="bookingTitle">Elegí tus fechas y seguí con la reserva en segundos.</h2>
+            <p data-i18n="bookingDesc">
+              Una experiencia clara, rápida y pensada para que puedas comparar, elegir y confirmar el mejor alojamiento sin complicaciones.
+            </p>
+
+            <ul class="booking-features">
+              <li data-i18n="bookingFeature1">Cancelación flexible</li>
+              <li data-i18n="bookingFeature2">Atención 24/7</li>
+              <li data-i18n="bookingFeature3">Check-in y check-out claros</li>
+              <li data-i18n="bookingFeature4">Desayuno y Wi‑Fi incluidos</li>
+            </ul>
+          </div>
+
+          <div class="booking-card" aria-label="Calendario de disponibilidad">
+            <div class="booking-topline">
+              <div>
+                <span class="muted-label" data-i18n="stayLabel">Estadía</span>
+                <strong id="bookingRange">Seleccioná fechas</strong>
+              </div>
+              <div class="price-box">
+                <span id="bookingPriceLabel">Desde</span>
+                <strong id="bookingTotal">USD 96 / noche</strong>
+                <small id="bookingDiscount" class="booking-discount" hidden></small>
+              </div>
+            </div>
+
+            <div class="calendar-toolbar">
+              <button class="calendar-nav" id="prevMonth" type="button" aria-label="Mes anterior">‹</button>
+              <h3 id="monthLabel">Mes actual</h3>
+              <button class="calendar-nav" id="nextMonth" type="button" aria-label="Mes siguiente">›</button>
+            </div>
+
+            <div class="weekday-row">
+              <span>Dom</span>
+              <span>Lun</span>
+              <span>Mar</span>
+              <span>Mié</span>
+              <span>Jue</span>
+              <span>Vie</span>
+              <span>Sáb</span>
+            </div>
+
+            <div class="calendar-grid" id="calendarGrid"></div>
+
+            <div class="booking-summary">
+              <div>
+                <span data-i18n="guestsLabel">Huéspedes</span>
+                <strong>2 adultos</strong>
+              </div>
+              <div class="booking-nights">
+                <span id="bookingNights">Seleccioná las fechas</span>
+                <strong id="bookingSavings" hidden></strong>
+              </div>
+              <button class="button button-primary full-width reserve-trigger" type="button" data-i18n="reserveNow2">Reservar ahora</button>
+            </div>
           </div>
         </div>
       </section>
@@ -98,10 +173,10 @@
         <div class="container">
           <div class="section-heading inline-heading">
             <div>
-              <p class="eyebrow">Alojamientos destacados</p>
-              <h2>Elegí el lugar ideal para tu escapada</h2>
+              <p class="eyebrow" data-i18n="featuredEyebrow">Alojamientos destacados</p>
+              <h2 data-i18n="featuredTitle">Elegí el lugar ideal para tu escapada</h2>
             </div>
-            <a href="#lugares" class="text-link">Ver todos</a>
+            <a href="#lugares" class="text-link" data-i18n="featuredViewAll">Ver todos</a>
           </div>
 
           <div class="cards" id="stay-cards">
@@ -111,16 +186,16 @@
               </div>
               <div class="card-content">
                 <div class="card-topline">
-                  <span class="tag">Selva</span>
+                  <span class="tag" data-i18n="tagSelva">Selva</span>
                   <span class="rating">★ 4.9</span>
                 </div>
                 <h3>Casa Jardín Iguazú</h3>
-                <p>Ideal para desconectarte con piscina, jardín y vista natural.</p>
+                <p data-i18n="stayCard1Desc">Ideal para desconectarte con piscina, jardín y vista natural.</p>
                 <div class="stars" aria-label="Valoración 4.9 de 5">
                   <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
                 <div class="card-meta">
-                  <span>2 habitaciones</span>
+                  <span data-i18n="rooms2">2 habitaciones</span>
                   <strong>USD 96 / noche</strong>
                 </div>
               </div>
@@ -132,16 +207,16 @@
               </div>
               <div class="card-content">
                 <div class="card-topline">
-                  <span class="tag">Familia</span>
+                  <span class="tag" data-i18n="tagFamily">Familia</span>
                   <span class="rating">★ 4.8</span>
                 </div>
                 <h3>Blossom House</h3>
-                <p>Amplio espacio con ambiente cálido, ideal para viajar en familia.</p>
+                <p data-i18n="stayCard2Desc">Amplio espacio con ambiente cálido, ideal para viajar en familia.</p>
                 <div class="stars" aria-label="Valoración 4.8 de 5">
                   <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
                 <div class="card-meta">
-                  <span>3 huéspedes</span>
+                  <span data-i18n="guests3">3 huéspedes</span>
                   <strong>USD 78 / noche</strong>
                 </div>
               </div>
@@ -153,19 +228,50 @@
               </div>
               <div class="card-content">
                 <div class="card-topline">
-                  <span class="tag">Romántico</span>
+                  <span class="tag" data-i18n="tagRomantic">Romántico</span>
                   <span class="rating">★ 5.0</span>
                 </div>
                 <h3>Cabina del Bosque</h3>
-                <p>Ambiente íntimo y tranquilo para vivir una escapada especial.</p>
+                <p data-i18n="stayCard3Desc">Ambiente íntimo y tranquilo para vivir una escapada especial.</p>
                 <div class="stars" aria-label="Valoración 5 de 5">
                   <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                 </div>
                 <div class="card-meta">
-                  <span>2 huéspedes</span>
+                  <span data-i18n="guests2Short">2 huéspedes</span>
                   <strong>USD 112 / noche</strong>
                 </div>
               </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="highlight-strip">
+        <div class="container">
+          <div class="section-heading inline-heading">
+            <div>
+              <p class="eyebrow">Esto es lo que hace especial cada estadía</p>
+              <h2>Más que un alojamiento: una experiencia pensada para descansar bien.</h2>
+            </div>
+          </div>
+
+          <div class="highlight-grid">
+            <article class="highlight-card">
+              <div class="highlight-icon">🌿</div>
+              <h3>Ambiente natural</h3>
+              <p>Espacios con jardín, selva y vistas tranquilas para vivir Puerto Iguazú de una manera más auténtica.</p>
+            </article>
+
+            <article class="highlight-card">
+              <div class="highlight-icon">✨</div>
+              <h3>Atención cálida</h3>
+              <p>Desde el check-in hasta la recomendación del mejor plan, cada detalle está pensado para que te sientas en casa.</p>
+            </article>
+
+            <article class="highlight-card">
+              <div class="highlight-icon">📍</div>
+              <h3>Ubicación ideal</h3>
+              <p>Estadías cercanas a los principales atractivos, con acceso cómodo y la tranquilidad que necesitás.</p>
             </article>
           </div>
         </div>
@@ -175,35 +281,35 @@
         <div class="container">
           <div class="section-heading inline-heading tab-header">
             <div>
-              <p class="eyebrow">Secciones especiales</p>
-              <h2>Todo en pestañas separadas para una mejor navegación</h2>
+              <p class="eyebrow" data-i18n="tabSectionEyebrow">Secciones especiales</p>
+              <h2 data-i18n="tabSectionTitle">Todo en pestañas separadas para una mejor navegación</h2>
             </div>
           </div>
 
           <div class="tab-shell" aria-label="Secciones de Blossom Stay">
             <div class="tab-nav" role="tablist" aria-label="Pestañas de contenido">
-              <button class="tab-button active" type="button" role="tab" aria-selected="true" data-tab="tab-stays">Alojamientos</button>
-              <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab="tab-experiences">Experiencias</button>
-              <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab="tab-services">Servicios</button>
+              <button class="tab-button active" type="button" role="tab" aria-selected="true" data-tab="tab-stays" data-i18n="tabStays">Alojamientos</button>
+              <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab="tab-experiences" data-i18n="tabExperiences">Experiencias</button>
+              <button class="tab-button" type="button" role="tab" aria-selected="false" data-tab="tab-services" data-i18n="tabServices">Servicios</button>
             </div>
 
             <div class="tab-panels">
               <article class="tab-panel active" id="tab-stays" role="tabpanel">
                 <div class="mini-tab-grid">
                   <div class="mini-tab-card">
-                    <span class="mini-tag">Selva</span>
-                    <h3>Casa Jardín Iguazú</h3>
-                    <p>Vista natural, piscina y ambiente íntimo para relajarse.</p>
+                    <span class="mini-tag" data-i18n="tabStayTag1">Selva</span>
+                    <h3 data-i18n="tabStayTitle1">Casa Jardín Iguazú</h3>
+                    <p data-i18n="tabStayDesc1">Vista natural, piscina y ambiente íntimo para relajarse.</p>
                   </div>
                   <div class="mini-tab-card accent">
-                    <span class="mini-tag">Familia</span>
-                    <h3>Blossom House</h3>
-                    <p>Espacio amplio, cómodo y pensado para viajes largos.</p>
+                    <span class="mini-tag" data-i18n="tabStayTag2">Familia</span>
+                    <h3 data-i18n="tabStayTitle2">Blossom House</h3>
+                    <p data-i18n="tabStayDesc2">Espacio amplio, cómodo y pensado para viajes largos.</p>
                   </div>
                   <div class="mini-tab-card soft">
-                    <span class="mini-tag">Romántico</span>
-                    <h3>Cabina del Bosque</h3>
-                    <p>Un entorno especial para vivir una escapada tranquila.</p>
+                    <span class="mini-tag" data-i18n="tabStayTag3">Romántico</span>
+                    <h3 data-i18n="tabStayTitle3">Cabina del Bosque</h3>
+                    <p data-i18n="tabStayDesc3">Un entorno especial para vivir una escapada tranquila.</p>
                   </div>
                 </div>
               </article>
@@ -211,19 +317,19 @@
               <article class="tab-panel" id="tab-experiences" role="tabpanel" hidden>
                 <div class="mini-tab-grid">
                   <div class="mini-tab-card">
-                    <span class="mini-tag">Top</span>
-                    <h3>Tour de cataratas</h3>
-                    <p>Recorridos guiados para vivir la naturaleza con detalles.</p>
+                    <span class="mini-tag" data-i18n="tabExpTag1">Top</span>
+                    <h3 data-i18n="tabExpTitle1">Tour de cataratas</h3>
+                    <p data-i18n="tabExpDesc1">Recorridos guiados para vivir la naturaleza con detalles.</p>
                   </div>
                   <div class="mini-tab-card accent">
-                    <span class="mini-tag">Naturaleza</span>
-                    <h3>Senderos y descanso</h3>
-                    <p>Planes para explorar la selva y desconectarte del ruido.</p>
+                    <span class="mini-tag" data-i18n="tabExpTag2">Naturaleza</span>
+                    <h3 data-i18n="tabExpTitle2">Senderos y descanso</h3>
+                    <p data-i18n="tabExpDesc2">Planes para explorar la selva y desconectarte del ruido.</p>
                   </div>
                   <div class="mini-tab-card soft">
-                    <span class="mini-tag">Aventura</span>
-                    <h3>Experiencias locales</h3>
-                    <p>Momentos auténticos con la mejor energía del destino.</p>
+                    <span class="mini-tag" data-i18n="tabExpTag3">Aventura</span>
+                    <h3 data-i18n="tabExpTitle3">Experiencias locales</h3>
+                    <p data-i18n="tabExpDesc3">Momentos auténticos con la mejor energía del destino.</p>
                   </div>
                 </div>
               </article>
@@ -231,19 +337,19 @@
               <article class="tab-panel" id="tab-services" role="tabpanel" hidden>
                 <div class="mini-tab-grid">
                   <div class="mini-tab-card">
-                    <span class="mini-tag">Atención</span>
-                    <h3>Check-in flexible</h3>
-                    <p>Servicio pensado para que llegues con tranquilidad.</p>
+                    <span class="mini-tag" data-i18n="tabServiceTag1">Atención</span>
+                    <h3 data-i18n="tabServiceTitle1">Check-in flexible</h3>
+                    <p data-i18n="tabServiceDesc1">Servicio pensado para que llegues con tranquilidad.</p>
                   </div>
                   <div class="mini-tab-card accent">
-                    <span class="mini-tag">Incluido</span>
-                    <h3>Desayuno y Wi‑Fi</h3>
-                    <p>Todo lo necesario para una estadía cómoda y relajada.</p>
+                    <span class="mini-tag" data-i18n="tabServiceTag2">Incluido</span>
+                    <h3 data-i18n="tabServiceTitle2">Desayuno y Wi‑Fi</h3>
+                    <p data-i18n="tabServiceDesc2">Todo lo necesario para una estadía cómoda y relajada.</p>
                   </div>
                   <div class="mini-tab-card soft">
-                    <span class="mini-tag">Soporte</span>
-                    <h3>Recomendaciones</h3>
-                    <p>Te orientamos con los mejores planes del lugar.</p>
+                    <span class="mini-tag" data-i18n="tabServiceTag3">Soporte</span>
+                    <h3 data-i18n="tabServiceTitle3">Recomendaciones</h3>
+                    <p data-i18n="tabServiceDesc3">Te orientamos con los mejores planes del lugar.</p>
                   </div>
                 </div>
               </article>
@@ -502,6 +608,248 @@
                 <button class="button button-primary full-width reserve-trigger" type="button">Reservar</button>
               </div>
             </article>
+
+            <article class="place-card" data-type="apartamento" data-price="86" data-guests="2" data-services="wifi,parking" data-rating="4.7" data-zone="Centro">
+              <div class="place-photo place-9"></div>
+              <div class="place-body">
+                <div class="place-topline">
+                  <h3>Departamento Sol y Selva</h3>
+                  <span class="place-price">USD 86</span>
+                </div>
+                <div class="place-meta">
+                  <span>1 habitación</span>
+                  <span>Balcony + Wi‑Fi</span>
+                </div>
+                <div class="stars small-stars" aria-label="4.5 estrellas">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+                </div>
+                <div class="card-actions">
+                  <button class="compare-btn" type="button">Comparar</button>
+                  <button class="favorite-btn mini-fav" aria-label="Guardar alojamiento">♡</button>
+                </div>
+                <button class="button button-primary full-width reserve-trigger" type="button">Reservar</button>
+              </div>
+            </article>
+
+            <article class="place-card" data-type="apartamento" data-price="92" data-guests="4" data-services="wifi,desayuno,parking" data-rating="4.8" data-zone="Zona residencial">
+              <div class="place-photo place-10"></div>
+              <div class="place-body">
+                <div class="place-topline">
+                  <h3>Apart Misión 21</h3>
+                  <span class="place-price">USD 92</span>
+                </div>
+                <div class="place-meta">
+                  <span>2 habitaciones</span>
+                  <span>Desayuno + estacionamiento</span>
+                </div>
+                <div class="stars small-stars" aria-label="5 estrellas">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <div class="card-actions">
+                  <button class="compare-btn" type="button">Comparar</button>
+                  <button class="favorite-btn mini-fav" aria-label="Guardar alojamiento">♡</button>
+                </div>
+                <button class="button button-primary full-width reserve-trigger" type="button">Reservar</button>
+              </div>
+            </article>
+
+            <article class="place-card" data-type="casa" data-price="118" data-guests="4" data-services="wifi,desayuno,piscina" data-rating="4.9" data-zone="Zona residencial">
+              <div class="place-photo place-11"></div>
+              <div class="place-body">
+                <div class="place-topline">
+                  <h3>Casa del Sol</h3>
+                  <span class="place-price">USD 118</span>
+                </div>
+                <div class="place-meta">
+                  <span>3 habitaciones</span>
+                  <span>Patio y piscina</span>
+                </div>
+                <div class="stars small-stars" aria-label="5 estrellas">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <div class="card-actions">
+                  <button class="compare-btn" type="button">Comparar</button>
+                  <button class="favorite-btn mini-fav" aria-label="Guardar alojamiento">♡</button>
+                </div>
+                <button class="button button-primary full-width reserve-trigger" type="button">Reservar</button>
+              </div>
+            </article>
+
+            <article class="place-card" data-type="apartamento" data-price="74" data-guests="2" data-services="wifi,parking" data-rating="4.6" data-zone="Centro">
+              <div class="place-photo place-12"></div>
+              <div class="place-body">
+                <div class="place-topline">
+                  <h3>Loft Iguazú</h3>
+                  <span class="place-price">USD 74</span>
+                </div>
+                <div class="place-meta">
+                  <span>1 habitación</span>
+                  <span>Ubicación central</span>
+                </div>
+                <div class="stars small-stars" aria-label="4 estrellas">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+                </div>
+                <div class="card-actions">
+                  <button class="compare-btn" type="button">Comparar</button>
+                  <button class="favorite-btn mini-fav" aria-label="Guardar alojamiento">♡</button>
+                </div>
+                <button class="button button-primary full-width reserve-trigger" type="button">Reservar</button>
+              </div>
+            </article>
+
+            <article class="place-card" data-type="cabana" data-price="98" data-guests="2" data-services="wifi,desayuno" data-rating="4.7" data-zone="Selva">
+              <div class="place-photo place-13"></div>
+              <div class="place-body">
+                <div class="place-topline">
+                  <h3>Cabaña Laurel</h3>
+                  <span class="place-price">USD 98</span>
+                </div>
+                <div class="place-meta">
+                  <span>1 habitación</span>
+                  <span>Ambiente natural</span>
+                </div>
+                <div class="stars small-stars" aria-label="4.5 estrellas">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+                </div>
+                <div class="card-actions">
+                  <button class="compare-btn" type="button">Comparar</button>
+                  <button class="favorite-btn mini-fav" aria-label="Guardar alojamiento">♡</button>
+                </div>
+                <button class="button button-primary full-width reserve-trigger" type="button">Reservar</button>
+              </div>
+            </article>
+
+            <article class="place-card" data-type="familia" data-price="126" data-guests="6" data-services="wifi,desayuno,parking" data-rating="4.9" data-zone="Selva">
+              <div class="place-photo place-14"></div>
+              <div class="place-body">
+                <div class="place-topline">
+                  <h3>Casa Niebla</h3>
+                  <span class="place-price">USD 126</span>
+                </div>
+                <div class="place-meta">
+                  <span>4 huéspedes</span>
+                  <span>Espacio familiar</span>
+                </div>
+                <div class="stars small-stars" aria-label="5 estrellas">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <div class="card-actions">
+                  <button class="compare-btn" type="button">Comparar</button>
+                  <button class="favorite-btn mini-fav" aria-label="Guardar alojamiento">♡</button>
+                </div>
+                <button class="button button-primary full-width reserve-trigger" type="button">Reservar</button>
+              </div>
+            </article>
+
+            <article class="place-card" data-type="apartamento" data-price="89" data-guests="2" data-services="wifi,desayuno" data-rating="4.8" data-zone="Centro">
+              <div class="place-photo place-15"></div>
+              <div class="place-body">
+                <div class="place-topline">
+                  <h3>Arbor House</h3>
+                  <span class="place-price">USD 89</span>
+                </div>
+                <div class="place-meta">
+                  <span>1 habitación</span>
+                  <span>Terraza en la azotea</span>
+                </div>
+                <div class="stars small-stars" aria-label="5 estrellas">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <div class="card-actions">
+                  <button class="compare-btn" type="button">Comparar</button>
+                  <button class="favorite-btn mini-fav" aria-label="Guardar alojamiento">♡</button>
+                </div>
+                <button class="button button-primary full-width reserve-trigger" type="button">Reservar</button>
+              </div>
+            </article>
+
+            <article class="place-card" data-type="apartamento" data-price="95" data-guests="2" data-services="wifi,parking" data-rating="4.9" data-zone="Centro">
+              <div class="place-photo place-16"></div>
+              <div class="place-body">
+                <div class="place-topline">
+                  <h3>Departamento Mburucuyá</h3>
+                  <span class="place-price">USD 95</span>
+                </div>
+                <div class="place-meta">
+                  <span>1 habitación</span>
+                  <span>Muy cerca del centro</span>
+                </div>
+                <div class="stars small-stars" aria-label="5 estrellas">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <div class="card-actions">
+                  <button class="compare-btn" type="button">Comparar</button>
+                  <button class="favorite-btn mini-fav" aria-label="Guardar alojamiento">♡</button>
+                </div>
+                <button class="button button-primary full-width reserve-trigger" type="button">Reservar</button>
+              </div>
+            </article>
+
+            <article class="place-card" data-type="apartamento" data-price="68" data-guests="2" data-services="wifi,desayuno" data-rating="4.6" data-zone="Zona residencial">
+              <div class="place-photo place-17"></div>
+              <div class="place-body">
+                <div class="place-topline">
+                  <h3>Estudio Río Verde</h3>
+                  <span class="place-price">USD 68</span>
+                </div>
+                <div class="place-meta">
+                  <span>Estudio</span>
+                  <span>Ideal para descanso breve</span>
+                </div>
+                <div class="stars small-stars" aria-label="4 estrellas">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+                </div>
+                <div class="card-actions">
+                  <button class="compare-btn" type="button">Comparar</button>
+                  <button class="favorite-btn mini-fav" aria-label="Guardar alojamiento">♡</button>
+                </div>
+                <button class="button button-primary full-width reserve-trigger" type="button">Reservar</button>
+              </div>
+            </article>
+
+            <article class="place-card" data-type="apartamento" data-price="110" data-guests="4" data-services="wifi,desayuno,parking" data-rating="4.8" data-zone="Centro">
+              <div class="place-photo place-18"></div>
+              <div class="place-body">
+                <div class="place-topline">
+                  <h3>Loft Las Palmas</h3>
+                  <span class="place-price">USD 110</span>
+                </div>
+                <div class="place-meta">
+                  <span>2 habitaciones</span>
+                  <span>Amplio y luminoso</span>
+                </div>
+                <div class="stars small-stars" aria-label="5 estrellas">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <div class="card-actions">
+                  <button class="compare-btn" type="button">Comparar</button>
+                  <button class="favorite-btn mini-fav" aria-label="Guardar alojamiento">♡</button>
+                </div>
+                <button class="button button-primary full-width reserve-trigger" type="button">Reservar</button>
+              </div>
+            </article>
+
+            <article class="place-card" data-type="apartamento" data-price="84" data-guests="2" data-services="wifi,parking" data-rating="4.7" data-zone="Selva">
+              <div class="place-photo place-19"></div>
+              <div class="place-body">
+                <div class="place-topline">
+                  <h3>Departamento Los Arrayanes</h3>
+                  <span class="place-price">USD 84</span>
+                </div>
+                <div class="place-meta">
+                  <span>1 habitación</span>
+                  <span>Vista natural y tranquila</span>
+                </div>
+                <div class="stars small-stars" aria-label="4.5 estrellas">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+                </div>
+                <div class="card-actions">
+                  <button class="compare-btn" type="button">Comparar</button>
+                  <button class="favorite-btn mini-fav" aria-label="Guardar alojamiento">♡</button>
+                </div>
+                <button class="button button-primary full-width reserve-trigger" type="button">Reservar</button>
+              </div>
+            </article>
           </div>
         </div>
       </section>
@@ -518,30 +866,30 @@
           </div>
 
           <div class="detail-panel">
-            <p class="eyebrow">Detalle del alojamiento</p>
+            <p class="eyebrow" data-i18n="showcaseEyebrow">Detalle del alojamiento</p>
             <h2>Casa Jardín Iguazú</h2>
             <div class="detail-rating">
               <span class="stars">★ ★ ★ ★ ★</span>
-              <strong>4.9 · 126 reseñas</strong>
+              <strong data-i18n="showcaseRating">4.9 · 126 reseñas</strong>
             </div>
-            <p class="detail-copy">
+            <p class="detail-copy" data-i18n="showcaseDesc">
               Una vivienda acogedora con jardines tropicales, piscina privada y una vista natural que
               invita a descansar luego de explorar la región.
             </p>
 
             <ul class="detail-list">
-              <li>2 habitaciones privadas</li>
-              <li>1 baño completo y amenities</li>
-              <li>Wi‑Fi, cocina equipada y patio</li>
-              <li>Check-in flexible y atención 24/7</li>
+              <li data-i18n="detailFeature1">2 habitaciones privadas</li>
+              <li data-i18n="detailFeature2">1 baño completo y amenities</li>
+              <li data-i18n="detailFeature3">Wi‑Fi, cocina equipada y patio</li>
+              <li data-i18n="detailFeature4">Check-in flexible y atención 24/7</li>
             </ul>
 
             <div class="price-row">
               <div>
-                <span>Desde</span>
+                <span data-i18n="fromText">Desde</span>
                 <strong>USD 96 / noche</strong>
               </div>
-              <button class="button button-primary reserve-trigger" type="button">Reservar ahora</button>
+              <button class="button button-primary reserve-trigger" type="button" data-i18n="reserveNow">Reservar ahora</button>
             </div>
           </div>
         </div>
@@ -550,110 +898,246 @@
       <section class="experience" id="experiencias">
         <div class="container experience-grid">
           <div class="experience-copy">
-            <p class="eyebrow">Experiencias inolvidables</p>
-            <h2>Viví Puerto Iguazú con un estilo de descanso auténtico.</h2>
-            <p>
+            <p class="eyebrow" data-i18n="experienceEyebrow">Experiencias inolvidables</p>
+            <h2 data-i18n="experienceTitle">Viví Puerto Iguazú con un estilo de descanso auténtico.</h2>
+            <p data-i18n="experienceDesc">
               Desde alojamiento cerca de las Cataratas hasta estadías con enfoque en la
               naturaleza, Blossom Stay conecta a viajeros con lugares que transforman cada
               paseo en una historia memorable.
             </p>
             <ul>
-              <li>Ubicación estratégica cerca de los principales atractivos</li>
-              <li>Ambientes acogedores, modernos y muy bien valorados</li>
-              <li>Recomendaciones personalizadas para cada viaje</li>
+              <li data-i18n="experienceFeature1">Ubicación estratégica cerca de los principales atractivos</li>
+              <li data-i18n="experienceFeature2">Ambientes acogedores, modernos y muy bien valorados</li>
+              <li data-i18n="experienceFeature3">Recomendaciones personalizadas para cada viaje</li>
             </ul>
+          </div>
+
+          <div class="explore-promo">
+            <div class="promo-card promo-card-main">
+              <span class="promo-tag">Oferta del mes</span>
+              <h3>Estadías con desayuno + tour de selva</h3>
+              <p>Reservá una experiencia completa con relajación, naturaleza y comodidad desde el primer día.</p>
+              <button class="button button-primary small-btn reserve-trigger" type="button">Reservar combo</button>
+            </div>
+            <div class="promo-row">
+              <div class="promo-card mini-promo">
+                <span>⭐ 4.9</span>
+                <strong>Clientes felices</strong>
+              </div>
+              <div class="promo-card mini-promo accent">
+                <span>⏱️</span>
+                <strong>Check-in rápido</strong>
+              </div>
+            </div>
           </div>
 
           <div class="experience-panel">
             <div class="mini-card">
-              <span>Top experiencia</span>
-              <strong>Tour de Cataratas + descanso en el bosque</strong>
+              <span data-i18n="experienceTop">Top experiencia</span>
+              <strong data-i18n="experienceTopText">Tour de Cataratas + descanso en el bosque</strong>
             </div>
             <div class="mini-card alt">
-              <span>Recomendación</span>
-              <strong>Estadía con desayuno incluido + guía local</strong>
+              <span data-i18n="experienceRec">Recomendación</span>
+              <strong data-i18n="experienceRecText">Estadía con desayuno incluido + guía local</strong>
             </div>
           </div>
         </div>
-      </section>
 
-      <section class="premium-features">
-        <div class="container">
-          <div class="section-heading center-heading">
-            <p class="eyebrow">Por qué elegir Blossom Stay</p>
-            <h2>Una experiencia premium pensada para relajarte desde el primer minuto.</h2>
-          </div>
-
-          <div class="trust-badges" aria-label="Estadísticas de confianza">
-            <div class="badge-card">
-              <strong>4.9/5</strong>
-              <span>Valoración promedio</span>
+        <section class="premium-features">
+          <div class="container">
+            <div class="section-heading center-heading">
+              <p class="eyebrow" data-i18n="premiumWhyEyebrow">Por qué elegir Blossom Stay</p>
+              <h2 data-i18n="premiumWhyTitle">Una experiencia premium pensada para relajarte desde el primer minuto.</h2>
             </div>
-            <div class="badge-card">
-              <strong>1.200+</strong>
-              <span>estadías reservadas</span>
+
+            <div class="trust-badges" aria-label="Estadísticas de confianza">
+              <div class="badge-card">
+                <strong>4.9/5</strong>
+                <span data-i18n="ratingAverage">Valoración promedio</span>
+              </div>
+              <div class="badge-card">
+                <strong>1.200+</strong>
+                <span data-i18n="staysBooked">estadías reservadas</span>
+              </div>
+              <div class="badge-card">
+                <strong>Top</strong>
+                <span data-i18n="travelerFav">Recomendado por viajeros</span>
+              </div>
             </div>
-            <div class="badge-card">
-              <strong>Top</strong>
-              <span>Recomendado por viajeros</span>
+
+            <div class="premium-grid">
+              <article class="feature-card">
+                <div class="feature-icon">📶</div>
+                <h3 data-i18n="featureWifi">Wi‑Fi de alta velocidad</h3>
+                <p data-i18n="featureWifiDesc">Conectate sin límites mientras trabajás, te relajás o compartís momentos.</p>
+              </article>
+
+              <article class="feature-card">
+                <div class="feature-icon">🏊</div>
+                <h3 data-i18n="featurePool">Piscina</h3>
+                <p data-i18n="featurePoolDesc">Espacios pensados para descansar con estilo y disfrutar del clima tropical.</p>
+              </article>
+
+              <article class="feature-card">
+                <div class="feature-icon">🚗</div>
+                <h3 data-i18n="featureParking">Estacionamiento</h3>
+                <p data-i18n="featureParkingDesc">Facilidad para llegar y moverte sin tener que preocuparte por el auto.</p>
+              </article>
+
+              <article class="feature-card">
+                <div class="feature-icon">🍳</div>
+                <h3 data-i18n="featureBreakfast">Desayuno</h3>
+                <p data-i18n="featureBreakfastDesc">Empieza cada día con sabores, calma y la energía perfecta para explorar.</p>
+              </article>
+
+              <article class="feature-card">
+                <div class="feature-icon">🧼</div>
+                <h3 data-i18n="featureClean">Limpieza impecable</h3>
+                <p data-i18n="featureCleanDesc">Ambientes cuidados y presentados con una atención impecable en cada detalle.</p>
+              </article>
+
+              <article class="feature-card">
+                <div class="feature-icon">↩️</div>
+                <h3 data-i18n="featureFlexible">Cancelación flexible</h3>
+                <p data-i18n="featureFlexibleDesc">Reservá con tranquilidad y ajustá tu plan si el viaje cambia de rumbo.</p>
+              </article>
             </div>
           </div>
+        </section>
 
-          <div class="premium-grid">
-            <article class="feature-card">
-              <div class="feature-icon">📶</div>
-              <h3>Wi‑Fi de alta velocidad</h3>
-              <p>Conectate sin límites mientras trabajás, te relajás o compartís momentos.</p>
-            </article>
+        <section class="itinerary-section">
+          <div class="container">
+            <div class="section-heading inline-heading">
+              <div>
+                <h2 data-i18n="itineraryTitle">Itinerarios recomendados para tu viaje</h2>
+              </div>
+              <a href="#contacto-fijo" class="button button-secondary" data-i18n="itineraryBuildPlan">Armar mi plan</a>
+            </div>
 
-            <article class="feature-card">
-              <div class="feature-icon">🏊</div>
-              <h3>Piscina</h3>
-              <p>Espacios pensados para descansar con estilo y disfrutar del clima tropical.</p>
-            </article>
+            <div class="itinerary-grid">
+              <article class="itinerary-card itinerary-card-one">
+                <div class="itinerary-kicker">3 días</div>
+                <h3 data-i18n="itineraryTrip1Title">Relajación total</h3>
+                <p data-i18n="itineraryTrip1Desc">Descanso, naturaleza y un cierre con buen vino y paisaje.</p>
+                <ul>
+                  <li data-i18n="itineraryTrip1Item1">Check-in tranquilo</li>
+                  <li data-i18n="itineraryTrip1Item2">Sendero y piscina</li>
+                  <li data-i18n="itineraryTrip1Item3">Cena recomendada</li>
+                </ul>
+                <div class="itinerary-footer">
+                  <span data-i18n="itineraryTrip1From">Desde USD 248</span>
+                  <button type="button" class="button button-primary small-btn reserve-trigger" data-i18n="reserveBtnShort">Reservar</button>
+                </div>
+              </article>
 
-            <article class="feature-card">
-              <div class="feature-icon">🚗</div>
-              <h3>Estacionamiento</h3>
-              <p>Facilidad para llegar y moverte sin tener que preocuparte por el auto.</p>
-            </article>
+              <article class="itinerary-card itinerary-card-two">
+                <div class="itinerary-kicker">4 días</div>
+                <h3 data-i18n="itineraryTrip2Title">Aventura y cascadas</h3>
+                <p data-i18n="itineraryTrip2Desc">La mejor mezcla entre excursiones, fotos y momentos de descanso.</p>
+                <ul>
+                  <li data-i18n="itineraryTrip2Item1">Cataratas + miradores</li>
+                  <li data-i18n="itineraryTrip2Item2">Senderismo</li>
+                  <li data-i18n="itineraryTrip2Item3">Tour nocturno</li>
+                </ul>
+                <div class="itinerary-footer">
+                  <span data-i18n="itineraryTrip2From">Desde USD 336</span>
+                  <button type="button" class="button button-primary small-btn reserve-trigger" data-i18n="reserveBtnShort2">Reservar</button>
+                </div>
+              </article>
 
-            <article class="feature-card">
-              <div class="feature-icon">🍳</div>
-              <h3>Desayuno</h3>
-              <p>Empieza cada día con sabores, calma y la energía perfecta para explorar.</p>
-            </article>
-
-            <article class="feature-card">
-              <div class="feature-icon">🧼</div>
-              <h3>Limpieza impecable</h3>
-              <p>Ambientes cuidados y presentados con una atención impecable en cada detalle.</p>
-            </article>
-
-            <article class="feature-card">
-              <div class="feature-icon">↩️</div>
-              <h3>Cancelación flexible</h3>
-              <p>Reservá con tranquilidad y ajustá tu plan si el viaje cambia de rumbo.</p>
-            </article>
+              <article class="itinerary-card itinerary-card-three">
+                <div class="itinerary-kicker">5 días</div>
+                <h3 data-i18n="itineraryTrip3Title">Viaje en pareja</h3>
+                <p data-i18n="itineraryTrip3Desc">Un plan romántico con detalles especiales y tiempo para desconectarse.</p>
+                <ul>
+                  <li data-i18n="itineraryTrip3Item1">Desayuno incluido</li>
+                  <li data-i18n="itineraryTrip3Item2">Tour romántico</li>
+                  <li data-i18n="itineraryTrip3Item3">Momentos especiales</li>
+                </ul>
+                <div class="itinerary-footer">
+                  <span data-i18n="itineraryTrip3From">Desde USD 416</span>
+                  <button type="button" class="button button-primary small-btn reserve-trigger" data-i18n="reserveBtnShort3">Reservar</button>
+                </div>
+              </article>
+            </div>
           </div>
-        </div>
+        </section>
+
+        <section class="step10-section">
+          <div class="container">
+            <div class="section-heading inline-heading">
+              <div>
+                <p class="eyebrow" data-i18n="premiumStep">Paso 10</p>
+                <h2 data-i18n="premiumTitle">Paquetes premium para disfrutar mejor</h2>
+              </div>
+              <a href="#contacto-fijo" class="button button-primary" data-i18n="premiumConsult">Consultar paquete</a>
+            </div>
+
+            <div class="premium-package-grid">
+              <article class="premium-package package-luxe">
+                <div class="package-topline">
+                  <span class="package-tag" data-i18n="premiumTagLuxe">Lujoso</span>
+                  <strong>USD 624</strong>
+                </div>
+                <h3>Blossom Escape</h3>
+                <p data-i18n="premiumLuxeDesc">Estadía elegante con desayuno, spa, wifi y una experiencia de descanso premium.</p>
+                <ul>
+                  <li data-i18n="premiumLuxeItem1">Habitación premium con vista</li>
+                  <li data-i18n="premiumLuxeItem2">Desayuno incluido</li>
+                  <li data-i18n="premiumLuxeItem3">Tour de cataratas</li>
+                </ul>
+                <button type="button" class="button button-primary small-btn reserve-trigger" data-i18n="premiumBookBtn">Reservar paquete</button>
+              </article>
+
+              <article class="premium-package package-family">
+                <div class="package-topline">
+                  <span class="package-tag" data-i18n="premiumTagFamily">Familiar</span>
+                  <strong>USD 512</strong>
+                </div>
+                <h3 data-i18n="premiumFamilyTitle">Familia en la selva</h3>
+                <p data-i18n="premiumFamilyDesc">Una opción ideal para viajar en familia con comodidad, espacios y actividades calmadas.</p>
+                <ul>
+                  <li data-i18n="premiumFamilyItem1">Habitación amplia</li>
+                  <li data-i18n="premiumFamilyItem2">Senderismo + actividades</li>
+                  <li data-i18n="premiumFamilyItem3">Check-in flexible</li>
+                </ul>
+                <button type="button" class="button button-primary small-btn reserve-trigger" data-i18n="premiumBookBtn2">Reservar paquete</button>
+              </article>
+
+              <article class="premium-package package-romantic">
+                <div class="package-topline">
+                  <span class="package-tag" data-i18n="premiumTagRomantic">Romántico</span>
+                  <strong>USD 472</strong>
+                </div>
+                <h3 data-i18n="premiumRomanticTitle">Escapada íntima</h3>
+                <p data-i18n="premiumRomanticDesc">Detalles para parejas, ambiente cálido y momentos especiales con estilo tropical.</p>
+                <ul>
+                  <li data-i18n="premiumRomanticItem1">Plan romántico</li>
+                  <li data-i18n="premiumRomanticItem2">Desayuno para dos</li>
+                  <li data-i18n="premiumRomanticItem3">Ambiente privado</li>
+                </ul>
+                <button type="button" class="button button-primary small-btn reserve-trigger" data-i18n="premiumBookBtn3">Reservar paquete</button>
+              </article>
+            </div>
+          </div>
+        </section>
       </section>
 
       <section class="map-section" id="mapa">
         <div class="container">
           <div class="section-heading inline-heading">
             <div>
-              <p class="eyebrow">Mapa interactivo</p>
-              <h2>Explorá los alojamientos por zona</h2>
+              <p class="eyebrow" data-i18n="mapEyebrow">Mapa interactivo</p>
+              <h2 data-i18n="mapTitle">Explorá los alojamientos por zona</h2>
             </div>
-            <a href="#lugares" class="text-link">Ver propiedades</a>
+            <a href="#lugares" class="text-link" data-i18n="mapSeeProperties">Ver propiedades</a>
           </div>
 
           <div class="map-shell">
             <div class="map-surface" aria-label="Mapa de zonas de Puerto Iguazú">
               <div class="map-label label-city">Puerto Iguazú</div>
-              <div class="map-label label-nature">Selva</div>
-              <div class="map-label label-river">Río</div>
+              <div class="map-label label-nature" data-i18n="mapJungle">Selva</div>
+              <div class="map-label label-river" data-i18n="mapRiver">Río</div>
 
               <button class="map-pin pin-1" data-target="villa-del-sol" type="button" aria-label="Ir a Villa del Sol">
                 <span>Villa del Sol</span>
@@ -670,11 +1154,11 @@
             </div>
 
             <div class="map-info">
-              <h3>Ubicaciones cercanas</h3>
+              <h3 data-i18n="mapNearbyTitle">Ubicaciones cercanas</h3>
               <ul>
-                <li>Frente a la zona turística</li>
-                <li>Muy cerca de senderos y naturaleza</li>
-                <li>Acceso cómodo para familias y parejas</li>
+                <li data-i18n="mapNearby1">Frente a la zona turística</li>
+                <li data-i18n="mapNearby2">Muy cerca de senderos y naturaleza</li>
+                <li data-i18n="mapNearby3">Acceso cómodo para familias y parejas</li>
               </ul>
             </div>
           </div>
@@ -684,122 +1168,59 @@
       <section class="faq-section" id="faq">
         <div class="container">
           <div class="section-heading center-heading">
-            <p class="eyebrow">Preguntas frecuentes</p>
-            <h2>Todo lo que necesitás saber antes de reservar</h2>
+            <p class="eyebrow" data-i18n="faqEyebrow">Preguntas frecuentes</p>
+            <h2 data-i18n="faqTitle">Todo lo que necesitás saber antes de reservar</h2>
           </div>
 
           <div class="faq-list" aria-label="Preguntas frecuentes">
             <div class="faq-item active">
               <button class="faq-question" type="button">
-                <span>¿Hay cancelación gratuita?</span>
+                <span data-i18n="faqQuestion1">¿Hay cancelación gratuita?</span>
                 <span class="faq-icon">+</span>
               </button>
               <div class="faq-answer">
-                <p>Sí. Muchos de nuestros alojamientos incluyen cancelación flexible, según la fecha de tu reserva y las condiciones del host.</p>
+                <p data-i18n="faqAnswer1">Sí. Muchos de nuestros alojamientos incluyen cancelación flexible, según la fecha de tu reserva y las condiciones del host.</p>
               </div>
             </div>
 
             <div class="faq-item">
               <button class="faq-question" type="button">
-                <span>¿Se puede pagar en cuotas?</span>
+                <span data-i18n="faqQuestion2">¿Se puede pagar en cuotas?</span>
                 <span class="faq-icon">+</span>
               </button>
               <div class="faq-answer">
-                <p>La mayoría de las reservas pueden gestionarse con distintas formas de pago, según el alojamiento y la opción elegida.</p>
+                <p data-i18n="faqAnswer2">La mayoría de las reservas pueden gestionarse con distintas formas de pago, según el alojamiento y la opción elegida.</p>
               </div>
             </div>
 
             <div class="faq-item">
               <button class="faq-question" type="button">
-                <span>¿Aceptan mascotas?</span>
+                <span data-i18n="faqQuestion3">¿Aceptan mascotas?</span>
                 <span class="faq-icon">+</span>
               </button>
               <div class="faq-answer">
-                <p>Algunas propiedades permiten mascotas. La información se indica en cada alojamiento y también podés consultarlo antes de reservar.</p>
+                <p data-i18n="faqAnswer3">Algunas propiedades permiten mascotas. La información se indica en cada alojamiento y también podés consultarlo antes de reservar.</p>
               </div>
             </div>
 
             <div class="faq-item">
               <button class="faq-question" type="button">
-                <span>¿Hay desayuno incluido?</span>
+                <span data-i18n="faqQuestion4">¿Hay desayuno incluido?</span>
                 <span class="faq-icon">+</span>
               </button>
               <div class="faq-answer">
-                <p>En varios alojamientos incluye desayuno, mientras que en otros se ofrece como servicio extra. Lo podés confirmar en la descripción.</p>
+                <p data-i18n="faqAnswer4">En varios alojamientos incluye desayuno, mientras que en otros se ofrece como servicio extra. Lo podés confirmar en la descripción.</p>
               </div>
             </div>
 
             <div class="faq-item">
               <button class="faq-question" type="button">
-                <span>¿Puedo consultar recomendaciones del destino?</span>
+                <span data-i18n="faqQuestion5">¿Puedo consultar recomendaciones del destino?</span>
                 <span class="faq-icon">+</span>
               </button>
               <div class="faq-answer">
-                <p>Claro. Blossom Stay te recomienda experiencias, senderos, atracciones y planes para que tu estadía sea más completa.</p>
+                <p data-i18n="faqAnswer5">Claro. Blossom Stay te recomienda experiencias, senderos, atracciones y planes para que tu estadía sea más completa.</p>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="booking-panel">
-        <div class="container booking-layout">
-          <div class="booking-copy">
-            <p class="eyebrow">Reserva fácil</p>
-            <h2>Elegí tus fechas y seguí con la reserva en segundos.</h2>
-            <p>
-              Una experiencia clara, rápida y pensada para que puedas comparar, elegir y confirmar el mejor alojamiento sin complicaciones.
-            </p>
-
-            <ul class="booking-features">
-              <li>Cancelación flexible</li>
-              <li>Atención 24/7</li>
-              <li>Check-in y check-out claros</li>
-              <li>Desayuno y Wi‑Fi incluidos</li>
-            </ul>
-          </div>
-
-          <div class="booking-card" aria-label="Calendario de disponibilidad">
-            <div class="booking-topline">
-              <div>
-                <span class="muted-label">Estadía</span>
-                <strong id="bookingRange">Seleccioná fechas</strong>
-              </div>
-              <div class="price-box">
-                <span id="bookingPriceLabel">Desde</span>
-                <strong id="bookingTotal">USD 96 / noche</strong>
-                <small id="bookingDiscount" class="booking-discount" hidden></small>
-              </div>
-            </div>
-
-            <div class="calendar-toolbar">
-              <button class="calendar-nav" id="prevMonth" type="button" aria-label="Mes anterior">‹</button>
-              <h3 id="monthLabel">Mes actual</h3>
-              <button class="calendar-nav" id="nextMonth" type="button" aria-label="Mes siguiente">›</button>
-            </div>
-
-            <div class="weekday-row">
-              <span>Dom</span>
-              <span>Lun</span>
-              <span>Mar</span>
-              <span>Mié</span>
-              <span>Jue</span>
-              <span>Vie</span>
-              <span>Sáb</span>
-            </div>
-
-            <div class="calendar-grid" id="calendarGrid"></div>
-
-            <div class="booking-summary">
-              <div>
-                <span>Huéspedes</span>
-                <strong>2 adultos</strong>
-              </div>
-              <div class="booking-nights">
-                <span id="bookingNights">Seleccioná las fechas</span>
-                <strong id="bookingSavings" hidden></strong>
-              </div>
-              <button class="button button-primary full-width reserve-trigger" type="button">Reservar ahora</button>
             </div>
           </div>
         </div>
@@ -808,33 +1229,33 @@
       <section class="airbnb-essentials">
         <div class="container">
           <div class="section-heading center-heading">
-            <p class="eyebrow">Por qué reservar con Blossom</p>
-            <h2>Todo lo que espera una buena experiencia de alojamiento</h2>
+            <p class="eyebrow" data-i18n="whyBookEyebrow">Por qué reservar con Blossom</p>
+            <h2 data-i18n="whyBookTitle">Todo lo que espera una buena experiencia de alojamiento</h2>
           </div>
 
           <div class="benefit-grid">
             <article class="benefit-card">
               <div class="benefit-icon">✓</div>
-              <h3>Check-in flexible</h3>
-              <p>Reservás con libertad y una experiencia más cómoda desde el primer momento.</p>
+              <h3 data-i18n="benefitCheckin">Check-in flexible</h3>
+              <p data-i18n="benefitCheckinDesc">Reservás con libertad y una experiencia más cómoda desde el primer momento.</p>
             </article>
 
             <article class="benefit-card">
               <div class="benefit-icon">★</div>
-              <h3>Superhost quality</h3>
-              <p>Ambientes cuidadosamente seleccionados con atención personalizada y estética.</p>
+              <h3 data-i18n="benefitSuperhost">Superhost quality</h3>
+              <p data-i18n="benefitSuperhostDesc">Ambientes cuidadosamente seleccionados con atención personalizada y estética.</p>
             </article>
 
             <article class="benefit-card">
               <div class="benefit-icon">🔒</div>
-              <h3>Pago seguro</h3>
-              <p>Procesos claros, confiables y pensados para viajar sin preocupaciones.</p>
+              <h3 data-i18n="benefitSecure">Pago seguro</h3>
+              <p data-i18n="benefitSecureDesc">Procesos claros, confiables y pensados para viajar sin preocupaciones.</p>
             </article>
 
             <article class="benefit-card">
               <div class="benefit-icon">📍</div>
-              <h3>Ubicación ideal</h3>
-              <p>Acceso a parques, rutas, cataratas y zonas turísticas sin complicaciones.</p>
+              <h3 data-i18n="benefitLocation">Ubicación ideal</h3>
+              <p data-i18n="benefitLocationDesc">Acceso a parques, rutas, cataratas y zonas turísticas sin complicaciones.</p>
             </article>
           </div>
         </div>
@@ -844,35 +1265,35 @@
         <div class="container">
           <div class="section-heading inline-heading">
             <div>
-              <p class="eyebrow">Zonas populares</p>
-              <h2>Elegí la zona que mejor encaje con tu viaje</h2>
+              <p class="eyebrow" data-i18n="zonesEyebrow">Zonas populares</p>
+              <h2 data-i18n="zonesTitle">Elegí la zona que mejor encaje con tu viaje</h2>
             </div>
-            <a href="#lugares" class="text-link">Ver mapa</a>
+            <a href="#lugares" class="text-link" data-i18n="zonesMap">Ver mapa</a>
           </div>
 
           <div class="neighborhood-grid">
             <article class="neighborhood-card zone-1">
-              <span class="zone-label">Centro</span>
+              <span class="zone-label" data-i18n="zoneCenter">Centro</span>
               <h3>Puerto Iguazú</h3>
-              <p>Comodidad, restaurantes, traslado y vida local.</p>
+              <p data-i18n="zoneCenterDesc">Comodidad, restaurantes, traslado y vida local.</p>
             </article>
 
             <article class="neighborhood-card zone-2">
-              <span class="zone-label">Naturaleza</span>
-              <h3>Selva misionera</h3>
-              <p>Ambiente tranquilo y cercanía con la naturaleza.</p>
+              <span class="zone-label" data-i18n="zoneNature">Naturaleza</span>
+              <h3 data-i18n="zoneJungleTitle">Selva misionera</h3>
+              <p data-i18n="zoneJungleDesc">Ambiente tranquilo y cercanía con la naturaleza.</p>
             </article>
 
             <article class="neighborhood-card zone-3">
-              <span class="zone-label">Aventura</span>
-              <h3>Cataratas</h3>
-              <p>Perfecto para quienes quieren comenzar el día temprano.</p>
+              <span class="zone-label" data-i18n="zoneAdventure">Aventura</span>
+              <h3 data-i18n="zoneFallsTitle">Cataratas</h3>
+              <p data-i18n="zoneFallsDesc">Perfecto para quienes quieren comenzar el día temprano.</p>
             </article>
 
             <article class="neighborhood-card zone-4">
-              <span class="zone-label">Familia</span>
-              <h3>Zona residencial</h3>
-              <p>Más calma, más espacio y una experiencia muy relajada.</p>
+              <span class="zone-label" data-i18n="zoneFamily">Familia</span>
+              <h3 data-i18n="zoneResidentialTitle">Zona residencial</h3>
+              <p data-i18n="zoneResidentialDesc">Más calma, más espacio y una experiencia muy relajada.</p>
             </article>
           </div>
         </div>
@@ -881,22 +1302,22 @@
       <section class="reviews">
         <div class="container">
           <div class="section-heading center-heading">
-            <p class="eyebrow">Opiniones destacadas</p>
-            <h2>Viajero feliz, experiencia confirmada</h2>
+            <p class="eyebrow" data-i18n="reviewsEyebrow">Opiniones destacadas</p>
+            <h2 data-i18n="reviewsTitle">Viajero feliz, experiencia confirmada</h2>
           </div>
 
           <div class="reviews-summary">
             <div class="review-metric">
               <strong>4.8</strong>
-              <span>Promedio</span>
+              <span data-i18n="reviewAverage">Promedio</span>
             </div>
             <div class="review-metric">
               <strong>96%</strong>
-              <span>Recomiendan</span>
+              <span data-i18n="reviewRecommend">Recomiendan</span>
             </div>
             <div class="review-metric">
               <strong>180+</strong>
-              <span>Estadías</span>
+              <span data-i18n="reviewStays">Estadías</span>
             </div>
           </div>
 
@@ -905,7 +1326,7 @@
               <div class="stars" aria-label="5 estrellas">
                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
               </div>
-              <p>“La casa estaba hermosa, tranquila y muy bien ubicada para visitar todo Puerto Iguazú.”</p>
+              <p data-i18n="review1Text">“La casa estaba hermosa, tranquila y muy bien ubicada para visitar todo Puerto Iguazú.”</p>
               <strong>— Lucia M.</strong>
             </article>
 
@@ -913,7 +1334,7 @@
               <div class="stars" aria-label="5 estrellas">
                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
               </div>
-              <p>“La atención fue excelente y el ambiente era perfecto para viajar con mi familia.”</p>
+              <p data-i18n="review2Text">“La atención fue excelente y el ambiente era perfecto para viajar con mi familia.”</p>
               <strong>— Martín P.</strong>
             </article>
 
@@ -921,7 +1342,7 @@
               <div class="stars" aria-label="5 estrellas">
                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
               </div>
-              <p>“La cabaña tenía detalles muy lindos y estaba rodeada de naturaleza.”</p>
+              <p data-i18n="review3Text">“La cabaña tenía detalles muy lindos y estaba rodeada de naturaleza.”</p>
               <strong>— Sofia R.</strong>
             </article>
           </div>
@@ -932,18 +1353,18 @@
         <div class="container">
           <div class="section-heading inline-heading">
             <div>
-              <p class="eyebrow">Contacto</p>
-              <h2>Hablemos de tu próxima estadía</h2>
+              <p class="eyebrow" data-i18n="contactEyebrow">Contacto</p>
+              <h2 data-i18n="contactTitle">Hablemos de tu próxima estadía</h2>
             </div>
-            <a class="button button-primary" href="https://wa.me/543757123456" target="_blank" rel="noreferrer">WhatsApp directo</a>
+            <a class="button button-primary" href="https://wa.me/543757123456" target="_blank" rel="noreferrer" data-i18n="contactWhatsApp">WhatsApp directo</a>
           </div>
 
           <div class="contact-grid">
             <div class="contact-card contact-form-card">
-              <h3>Envíanos un mensaje</h3>
+              <h3 data-i18n="contactFormTitle">Envíanos un mensaje</h3>
               <form class="contact-form">
                 <label>
-                  <span>Nombre</span>
+                  <span data-i18n="contactName">Nombre</span>
                   <input type="text" placeholder="Tu nombre" />
                 </label>
                 <label>
@@ -951,10 +1372,10 @@
                   <input type="email" placeholder="tuemail@mail.com" />
                 </label>
                 <label>
-                  <span>Mensaje</span>
+                  <span data-i18n="contactMessage">Mensaje</span>
                   <textarea rows="5" placeholder="Contanos qué estás buscando..."></textarea>
                 </label>
-                <button type="submit" class="button button-primary full-width">Enviar consulta</button>
+                <button type="submit" class="button button-primary full-width" data-i18n="contactSend">Enviar consulta</button>
               </form>
             </div>
 
@@ -971,11 +1392,11 @@
                 </li>
                 <li>
                   <span class="contact-icon">📍</span>
-                  <span>Puerto Iguazú, Misiones, Argentina</span>
+                  <span data-i18n="contactLocation">Puerto Iguazú, Misiones, Argentina</span>
                 </li>
                 <li>
                   <span class="contact-icon">🕒</span>
-                  <span>Lun a Dom · 9:00 a 20:00</span>
+                  <span data-i18n="contactHours">Lun a Dom · 9:00 a 20:00</span>
                 </li>
               </ul>
 
@@ -993,127 +1414,69 @@
         <div class="container">
           <div class="section-heading inline-heading">
             <div>
-              <h2>Actividades para vivir la experiencia completa</h2>
+              <h2 data-i18n="activitiesTitle">Actividades para vivir la experiencia completa</h2>
             </div>
-            <a href="#contacto-fijo" class="button button-secondary">Solicitar info</a>
+            <a href="#contacto-fijo" class="button button-secondary" data-i18n="activitiesRequest">Solicitar info</a>
           </div>
 
           <div class="activities-grid">
             <article class="activity-card activity-cataratas">
-              <div class="activity-badge">Top 1</div>
-              <h3>Cataratas + miradores</h3>
-              <p>Recorré los mejores miradores con guía local y horarios pensados para cada nivel de aventura.</p>
+              <div class="activity-badge" data-i18n="activityBadgeTop">Top 1</div>
+              <h3 data-i18n="activityFallsTitle">Cataratas + miradores</h3>
+              <p data-i18n="activityFallsDesc">Recorré los mejores miradores con guía local y horarios pensados para cada nivel de aventura.</p>
               <div class="activity-meta">
-                <span>4 horas</span>
-                <span>Desde USD 44</span>
+                <span data-i18n="activityFallsTime">4 horas</span>
+                <span data-i18n="activityFallsPrice">Desde USD 44</span>
               </div>
-              <p class="activity-short">Miradores vistos desde lo más espectacular del parque.</p>
+              <p class="activity-short" data-i18n="activityFallsShort">Miradores vistos desde lo más espectacular del parque.</p>
               <div class="activity-actions">
-                <a href="#contacto-fijo" class="button button-secondary small-btn">Ver detalle</a>
-                <button type="button" class="button button-primary small-btn reserve-trigger">Reservar</button>
+                <a href="#contacto-fijo" class="button button-secondary small-btn" data-i18n="activityDetail">Ver detalle</a>
+                <button type="button" class="button button-primary small-btn reserve-trigger" data-i18n="activityReserve">Reservar</button>
               </div>
             </article>
 
             <article class="activity-card activity-selva">
-              <div class="activity-badge">Naturaleza</div>
-              <h3>Senderismo en la selva</h3>
-              <p>Una experiencia calma y auténtica con paisajes, fauna y paradas ideales para fotos.</p>
+              <div class="activity-badge" data-i18n="activityNatureBadge">Naturaleza</div>
+              <h3 data-i18n="activityForestTitle">Senderismo en la selva</h3>
+              <p data-i18n="activityForestDesc">Una experiencia calma y auténtica con paisajes, fauna y paradas ideales para fotos.</p>
               <div class="activity-meta">
-                <span>3 horas</span>
-                <span>Desde USD 38</span>
+                <span data-i18n="activityForestTime">3 horas</span>
+                <span data-i18n="activityForestPrice">Desde USD 38</span>
               </div>
-              <p class="activity-short">Senderos tranquilos para conectar con la naturaleza.</p>
+              <p class="activity-short" data-i18n="activityForestShort">Senderos tranquilos para conectar con la naturaleza.</p>
               <div class="activity-actions">
-                <a href="#contacto-fijo" class="button button-secondary small-btn">Ver detalle</a>
-                <button type="button" class="button button-primary small-btn reserve-trigger">Reservar</button>
+                <a href="#contacto-fijo" class="button button-secondary small-btn" data-i18n="activityDetail2">Ver detalle</a>
+                <button type="button" class="button button-primary small-btn reserve-trigger" data-i18n="activityReserve2">Reservar</button>
               </div>
             </article>
 
             <article class="activity-card activity-gastronomia">
-              <div class="activity-badge">Local</div>
-              <h3>Tour gastronómico</h3>
-              <p>Probá sabores regionales, cafés locales y experiencias que te conectan con la cultura del lugar.</p>
+              <div class="activity-badge" data-i18n="activityLocalBadge">Local</div>
+              <h3 data-i18n="activityGastronomyTitle">Tour gastronómico</h3>
+              <p data-i18n="activityGastronomyDesc">Probá sabores regionales, cafés locales y experiencias que te conectan con la cultura del lugar.</p>
               <div class="activity-meta">
-                <span>2.5 horas</span>
-                <span>Desde USD 31</span>
+                <span data-i18n="activityGastronomyTime">2.5 horas</span>
+                <span data-i18n="activityGastronomyPrice">Desde USD 31</span>
               </div>
-              <p class="activity-short">Sabor local con cafés, snacks y sabores auténticos.</p>
+              <p class="activity-short" data-i18n="activityGastronomyShort">Sabor local con cafés, snacks y sabores auténticos.</p>
               <div class="activity-actions">
-                <a href="#contacto-fijo" class="button button-secondary small-btn">Ver detalle</a>
-                <button type="button" class="button button-primary small-btn reserve-trigger">Reservar</button>
+                <a href="#contacto-fijo" class="button button-secondary small-btn" data-i18n="activityDetail3">Ver detalle</a>
+                <button type="button" class="button button-primary small-btn reserve-trigger" data-i18n="activityReserve3">Reservar</button>
               </div>
             </article>
 
             <article class="activity-card activity-romantico">
-              <div class="activity-badge">Parejas</div>
-              <h3>Tour romántico</h3>
-              <p>Un plan pensado para noches íntimas, vistas relajantes y momentos especiales en un entorno tropical.</p>
+              <div class="activity-badge" data-i18n="activityCouplesBadge">Parejas</div>
+              <h3 data-i18n="activityRomanticTitle">Tour romántico</h3>
+              <p data-i18n="activityRomanticDesc">Un plan pensado para noches íntimas, vistas relajantes y momentos especiales en un entorno tropical.</p>
               <div class="activity-meta">
-                <span>2 horas</span>
-                <span>Desde USD 34</span>
+                <span data-i18n="activityRomanticTime">2 horas</span>
+                <span data-i18n="activityRomanticPrice">Desde USD 34</span>
               </div>
-              <p class="activity-short">Paseos relajados y momento perfecto para compartir.</p>
+              <p class="activity-short" data-i18n="activityRomanticShort">Paseos relajados y momento perfecto para compartir.</p>
               <div class="activity-actions">
-                <a href="#contacto-fijo" class="button button-secondary small-btn">Ver detalle</a>
-                <button type="button" class="button button-primary small-btn reserve-trigger">Reservar</button>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="itinerary-section" id="itinerarios">
-        <div class="container">
-          <div class="section-heading inline-heading">
-            <div>
-              <h2>Itinerarios recomendados para tu viaje</h2>
-            </div>
-            <a href="#contacto-fijo" class="button button-secondary">Armar mi plan</a>
-          </div>
-
-          <div class="itinerary-grid">
-            <article class="itinerary-card itinerary-card-one">
-              <div class="itinerary-kicker">3 días</div>
-              <h3>Relajación total</h3>
-              <p>Descanso, naturaleza y un cierre con buen vino y paisaje.</p>
-              <ul>
-                <li>Check-in tranquilo</li>
-                <li>Sendero y piscina</li>
-                <li>Cena recomendada</li>
-              </ul>
-              <div class="itinerary-footer">
-                <span>Desde USD 248</span>
-                <button type="button" class="button button-primary small-btn reserve-trigger">Reservar</button>
-              </div>
-            </article>
-
-            <article class="itinerary-card itinerary-card-two">
-              <div class="itinerary-kicker">4 días</div>
-              <h3>Aventura y cascadas</h3>
-              <p>La mejor mezcla entre excursiones, fotos y momentos de descanso.</p>
-              <ul>
-                <li>Cataratas + miradores</li>
-                <li>Senderismo</li>
-                <li>Tour nocturno</li>
-              </ul>
-              <div class="itinerary-footer">
-                <span>Desde USD 336</span>
-                <button type="button" class="button button-primary small-btn reserve-trigger">Reservar</button>
-              </div>
-            </article>
-
-            <article class="itinerary-card itinerary-card-three">
-              <div class="itinerary-kicker">5 días</div>
-              <h3>Viaje en pareja</h3>
-              <p>Un plan romántico con detalles especiales y tiempo para desconectarse.</p>
-              <ul>
-                <li>Desayuno incluido</li>
-                <li>Tour romántico</li>
-                <li>Momentos especiales</li>
-              </ul>
-              <div class="itinerary-footer">
-                <span>Desde USD 416</span>
-                <button type="button" class="button button-primary small-btn reserve-trigger">Reservar</button>
+                <a href="#contacto-fijo" class="button button-secondary small-btn" data-i18n="activityDetail4">Ver detalle</a>
+                <button type="button" class="button button-primary small-btn reserve-trigger" data-i18n="activityReserve4">Reservar</button>
               </div>
             </article>
           </div>
@@ -1158,64 +1521,6 @@
         </div>
       </section>
 
-      <section class="step10-section" id="paquetes-premium">
-        <div class="container">
-          <div class="section-heading inline-heading">
-            <div>
-              <p class="eyebrow">Paso 10</p>
-              <h2>Paquetes premium para disfrutar mejor</h2>
-            </div>
-            <a href="#contacto-fijo" class="button button-primary">Consultar paquete</a>
-          </div>
-
-          <div class="premium-package-grid">
-            <article class="premium-package package-luxe">
-              <div class="package-topline">
-                <span class="package-tag">Lujoso</span>
-                <strong>USD 624</strong>
-              </div>
-              <h3>Blossom Escape</h3>
-              <p>Estadía elegante con desayuno, spa, wifi y una experiencia de descanso premium.</p>
-              <ul>
-                <li>Habitación premium con vista</li>
-                <li>Desayuno incluido</li>
-                <li>Tour de cataratas</li>
-              </ul>
-              <button type="button" class="button button-primary small-btn reserve-trigger">Reservar paquete</button>
-            </article>
-
-            <article class="premium-package package-family">
-              <div class="package-topline">
-                <span class="package-tag">Familiar</span>
-                <strong>USD 512</strong>
-              </div>
-              <h3>Familia en la selva</h3>
-              <p>Una opción ideal para viajar en familia con comodidad, espacios y actividades calmadas.</p>
-              <ul>
-                <li>Habitación amplia</li>
-                <li>Senderismo + actividades</li>
-                <li>Check-in flexible</li>
-              </ul>
-              <button type="button" class="button button-primary small-btn reserve-trigger">Reservar paquete</button>
-            </article>
-
-            <article class="premium-package package-romantic">
-              <div class="package-topline">
-                <span class="package-tag">Romántico</span>
-                <strong>USD 472</strong>
-              </div>
-              <h3>Escapada íntima</h3>
-              <p>Detalles para parejas, ambiente cálido y momentos especiales con estilo tropical.</p>
-              <ul>
-                <li>Plan romántico</li>
-                <li>Desayuno para dos</li>
-                <li>Ambiente privado</li>
-              </ul>
-              <button type="button" class="button button-primary small-btn reserve-trigger">Reservar paquete</button>
-            </article>
-          </div>
-        </div>
-      </section>
     </main>
 
     <section class="admin-panel hidden" id="adminSection" aria-live="polite">
